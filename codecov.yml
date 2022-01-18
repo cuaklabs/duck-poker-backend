@@ -1,0 +1,18 @@
+coverage:
+  status:
+    project:
+      default: off
+      duck-backend-env:
+        flags:
+          - duck-backend-env
+      duck-backend-redis:
+        flags: 
+          - duck-backend-redis
+
+flags:
+  duck-backend-env:
+    paths:
+      - packages/duck-backend-env/
+  duck-backend-redis:
+    paths:
+      - packages/duck-backend-redis/
