@@ -1,0 +1,25 @@
+{
+  "author": "Cuak McCuackl <cuak.mccuakl@cuaklabs.com>",
+  "bugs": {
+    "url": "https://github.com/cuaklabs/duck-poker/issues"
+  },
+  "description": "> TODO: description",
+  "devDependencies": {
+    "@types/ioredis": "^4.28.7"
+  },
+  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/duck-backend-redis#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@cuaklabs/duck-backend-redis",
+  "peerDependencies": {
+    "ioredis": "^4.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/duck-poker.git"
+  },
+  "version": "0.0.1"
+}
