@@ -59,8 +59,8 @@ jobs:
     strategy:
       matrix:
         package:
-          - duck-backend-env
-          - duck-backend-redis
+          - env
+          - redis
     steps:
       - name: Git checkout
         uses: actions/checkout@v2

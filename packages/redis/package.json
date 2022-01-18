@@ -7,10 +7,10 @@
   "devDependencies": {
     "@types/ioredis": "^4.28.7"
   },
-  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/duck-backend-redis#readme",
+  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/redis#readme",
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "@cuaklabs/duck-backend-redis",
+  "name": "@cuaklabs/duck-poker-backend-redis",
   "peerDependencies": {
     "ioredis": "^4.0.0"
   },

@@ -2,17 +2,17 @@ coverage:
   status:
     project:
       default: off
-      duck-backend-env:
+      env:
         flags:
-          - duck-backend-env
-      duck-backend-redis:
+          - env
+      redis:
         flags: 
-          - duck-backend-redis
+          - redis
 
 flags:
-  duck-backend-env:
+  env:
     paths:
-      - packages/duck-backend-env/
-  duck-backend-redis:
+      - packages/env/
+  redis:
     paths:
-      - packages/duck-backend-redis/
+      - packages/redis/

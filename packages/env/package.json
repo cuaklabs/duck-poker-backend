@@ -7,10 +7,10 @@
   "devDependencies": {
     "@types/ioredis": "^4.28.7"
   },
-  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/duck-backend-env#readme",
+  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/env#readme",
   "license": "MIT",
   "main": "lib/index.js",
-  "name": "@cuaklabs/duck-backend-env",
+  "name": "@cuaklabs/duck-poker-backend-env",
   "peerDependencies": {
     "dotenv": "^14.0.0"
   },

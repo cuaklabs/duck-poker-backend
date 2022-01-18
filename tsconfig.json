@@ -14,8 +14,8 @@
     "noUncheckedIndexedAccess": true,
     "outDir": "./node_modules/@cuaklabs",
     "paths": {
-      "@cuaklabs/duck-backend-env": ["./packages/duck-backend-env"],
-      "@cuaklabs/duck-backend-redis": ["./packages/duck-backend-redis"]
+      "@cuaklabs/duck-poker-backend-env": ["./packages/env"],
+      "@cuaklabs/duck-poker-backend-redis": ["./packages/redis"]
     },
     "resolveJsonModule": true,
     "rootDir": "packages",

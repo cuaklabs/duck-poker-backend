@@ -1,30 +1,15 @@
 const { getJestJsProjectConfig } = require('./jest.config.base');
 
-const duckBackendEnvJsUnitProject = getJestJsProjectConfig(
-  'duck-backend-env-Unit',
-  ['/node_modules', '.int.spec.js'],
-  'duck-backend-env',
-  '.spec.js',
-);
+const envJsUnitProject = getJestJsProjectConfig('env-Unit', ['/node_modules', '.int.spec.js'], 'env', '.spec.js');
 
-const duckBackendEnvJsIntegrationProject = getJestJsProjectConfig(
-  'duck-backend-env-Integration',
+const envJsIntegrationProject = getJestJsProjectConfig('env-Integration', ['/node_modules'], 'env', '.int.spec.js');
+
+const redisJsUnitProject = getJestJsProjectConfig('redis-Unit', ['/node_modules', '.int.spec.js'], 'redis', '.spec.js');
+
+const redisJsIntegrationProject = getJestJsProjectConfig(
+  'redis-Integration',
   ['/node_modules'],
-  'duck-backend-env',
-  '.int.spec.js',
-);
-
-const duckBackendRedisJsUnitProject = getJestJsProjectConfig(
-  'duck-backend-redis-Unit',
-  ['/node_modules', '.int.spec.js'],
-  'duck-backend-redis',
-  '.spec.js',
-);
-
-const duckBackendRedisJsIntegrationProject = getJestJsProjectConfig(
-  'duck-backend-redis-Integration',
-  ['/node_modules'],
-  'duck-backend-redis',
+  'redis',
   '.int.spec.js',
 );
 
@@ -34,10 +19,10 @@ const jsIntegrationProject = getJestJsProjectConfig('Integration', ['/node_modul
 
 module.exports = {
   projects: [
-    duckBackendEnvJsUnitProject,
-    duckBackendEnvJsIntegrationProject,
-    duckBackendRedisJsIntegrationProject,
-    duckBackendRedisJsUnitProject,
+    envJsUnitProject,
+    envJsIntegrationProject,
+    redisJsIntegrationProject,
+    redisJsUnitProject,
     jsIntegrationProject,
     jsUnitProject,
   ],
