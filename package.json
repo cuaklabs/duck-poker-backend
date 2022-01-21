@@ -63,6 +63,7 @@
     "docker:up:test:ci": "npm run docker:up:test -- -d",
     "format": "prettier --write ./packages",
     "lint": "eslint --ext ts --ignore-path .gitignore .",
+    "packages:link": "node ./scripts/cretateSymlinks.mjs",
     "prepare": "husky install",
     "prepublish:packages": "npm run build && npm t",
     "publish:packages": "lerna publish from-package",
