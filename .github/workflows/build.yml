@@ -46,8 +46,7 @@ jobs:
         id: ts-build-cache
         with:
           path: |
-            ./dist
-            ./node_modules/@cuaklabs
+            ./packages
           key: ts-build-${{ steps.get-git-commit-hash.outputs.gitCommitHash }}
           restore-keys: |
             ts-build-${{ steps.get-git-commit-hash.outputs.gitCommitHash }}
@@ -84,19 +83,17 @@ jobs:
         id: ts-build-cache
         with:
           path: |
-            ./dist
-            ./node_modules/@cuaklabs
+            ./packages
           key: ts-build-${{ steps.get-git-commit-hash.outputs.gitCommitHash }}
           restore-keys: |
             ts-build-${{ steps.get-git-commit-hash.outputs.gitCommitHash }}
 
-      - name: Build on cache miss (cuaklabs dependency files)
-        run: npm run build:ci
+      - name: Build on cache miss
+        run: npm run build
         if: ${{ !steps.ts-build-cache.outputs.cache-hit }}
 
-      - name: Build on cache miss (test files)
-        run: npm run build:ci:test
-        if: ${{ !steps.ts-build-cache.outputs.cache-hit }}
+      - name: Link packages
+        run: npm run packages:link
 
       - name: Launch docker images
         run: npm run docker:up:test:ci
