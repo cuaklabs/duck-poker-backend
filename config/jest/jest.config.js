@@ -13,6 +13,20 @@ const redisTsIntegrationProject = getJestTsProjectConfig(
   '.int.spec.ts',
 );
 
+const testUtilsTsUnitProject = getJestTsProjectConfig(
+  'test-utils-Unit',
+  ['/node_modules', '.int.spec.ts'],
+  'test-utils',
+  '.spec.ts',
+);
+
+const testUtilsTsIntegrationProject = getJestTsProjectConfig(
+  'test-utils-Integration',
+  ['/node_modules'],
+  'test-utils',
+  '.int.spec.ts',
+);
+
 const tsUnitProject = getJestTsProjectConfig('Unit', ['/node_modules', '.int.spec.ts'], undefined, '.spec.ts');
 
 const tsIntegrationProject = getJestTsProjectConfig('Integration', ['/node_modules'], undefined, '.int.spec.ts');
@@ -23,6 +37,8 @@ module.exports = {
     envTsIntegrationProject,
     redisTsUnitProject,
     redisTsIntegrationProject,
+    testUtilsTsUnitProject,
+    testUtilsTsIntegrationProject,
     tsIntegrationProject,
     tsUnitProject,
   ],

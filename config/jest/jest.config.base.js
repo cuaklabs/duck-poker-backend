@@ -1,5 +1,5 @@
 const tsRoot = '<rootDir>/packages';
-const jsRoot = '<rootDir>/dist';
+const jsRoot = '<rootDir>/packages';
 
 /**
  * @param { !string } projectName Jest project's name

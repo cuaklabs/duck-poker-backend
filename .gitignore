@@ -5,10 +5,7 @@ node_modules/
 coverage/
 
 # Typescript compiled files
-dist/
-
-packages/**/*.d.ts
-packages/**/*.js
+packages/*/lib/**
 
 # TypeScript cache
 *.tsbuildinfo

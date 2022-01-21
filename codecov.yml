@@ -16,3 +16,6 @@ flags:
   redis:
     paths:
       - packages/redis/
+  test-utils:
+    paths:
+      - packages/test-utils/

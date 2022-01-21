@@ -13,6 +13,20 @@ const redisJsIntegrationProject = getJestJsProjectConfig(
   '.int.spec.js',
 );
 
+const testUtilsJsUnitProject = getJestJsProjectConfig(
+  'test-utils-Unit',
+  ['/node_modules', '.int.spec.js'],
+  'test-utils',
+  '.spec.js',
+);
+
+const testUtilsJsIntegrationProject = getJestJsProjectConfig(
+  'test-utils-Integration',
+  ['/node_modules'],
+  'test-utils',
+  '.int.spec.js',
+);
+
 const jsUnitProject = getJestJsProjectConfig('Unit', ['/node_modules', '.int.spec.js'], undefined, '.spec.js');
 
 const jsIntegrationProject = getJestJsProjectConfig('Integration', ['/node_modules'], undefined, '.int.spec.js');
@@ -23,6 +37,8 @@ module.exports = {
     envJsIntegrationProject,
     redisJsIntegrationProject,
     redisJsUnitProject,
+    testUtilsJsUnitProject,
+    testUtilsJsIntegrationProject,
     jsIntegrationProject,
     jsUnitProject,
   ],

@@ -1,0 +1,14 @@
+{
+  "files": [],
+  "references": [
+  {
+    "path": "./packages/env/tsconfig.json"
+  },
+  {
+    "path": "./packages/redis/tsconfig.json"
+  },
+  {
+    "path": "./packages/test-utils/tsconfig.json"
+  }
+ ]
+}
