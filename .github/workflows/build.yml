@@ -99,7 +99,7 @@ jobs:
         if: ${{ !steps.ts-build-cache.outputs.cache-hit }}
 
       - name: Launch docker images
-        run: npm run docker:up:test
+        run: npm run docker:up:test:ci
 
       - name: Launch Tests and generate coverage report
         run: npm run test:package:${{ matrix.package }}:js:ci:coverage
