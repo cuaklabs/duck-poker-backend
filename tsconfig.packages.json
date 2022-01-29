@@ -2,13 +2,22 @@
   "files": [],
   "references": [
   {
+    "path": "./packages/common/tsconfig.json"
+  },
+  {
     "path": "./packages/env/tsconfig.json"
   },
   {
     "path": "./packages/redis/tsconfig.json"
   },
   {
+    "path": "./packages/server/tsconfig.json"
+  },
+  {
     "path": "./packages/test-utils/tsconfig.json"
+  },
+  {
+    "path": "./packages/ws/tsconfig.json"
   }
  ]
 }

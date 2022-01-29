@@ -11,6 +11,9 @@ coverage:
       test-utils:
         flags:
           - test-utils
+      ws:
+        flags:
+          - ws
 
 flags:
   env:
@@ -22,3 +25,6 @@ flags:
   test-utils:
     paths:
       - packages/test-utils/
+  ws:
+    paths:
+      - packages/ws/
