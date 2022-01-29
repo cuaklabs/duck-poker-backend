@@ -12,6 +12,7 @@
       ],
       "args": [
         "${workspaceRoot}/node_modules/.bin/jest",
+        "--config=config/jest/jest.config.js",
         "${file}"
       ],
       "console": "integratedTerminal",
