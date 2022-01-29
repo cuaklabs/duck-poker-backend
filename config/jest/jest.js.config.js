@@ -27,6 +27,10 @@ const testUtilsJsIntegrationProject = getJestJsProjectConfig(
   '.int.spec.js',
 );
 
+const wsJsUnitProject = getJestJsProjectConfig('ws-Unit', ['/node_modules', '.int.spec.js'], 'ws', '.spec.js');
+
+const wsJsIntegrationProject = getJestJsProjectConfig('ws-Integration', ['/node_modules'], 'ws', '.int.spec.js');
+
 const jsUnitProject = getJestJsProjectConfig('Unit', ['/node_modules', '.int.spec.js'], undefined, '.spec.js');
 
 const jsIntegrationProject = getJestJsProjectConfig('Integration', ['/node_modules'], undefined, '.int.spec.js');
@@ -35,11 +39,13 @@ module.exports = {
   projects: [
     envJsUnitProject,
     envJsIntegrationProject,
+    jsIntegrationProject,
+    jsUnitProject,
     redisJsIntegrationProject,
     redisJsUnitProject,
     testUtilsJsUnitProject,
     testUtilsJsIntegrationProject,
-    jsIntegrationProject,
-    jsUnitProject,
+    wsJsIntegrationProject,
+    wsJsUnitProject,
   ],
 };

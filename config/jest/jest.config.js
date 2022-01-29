@@ -27,6 +27,10 @@ const testUtilsTsIntegrationProject = getJestTsProjectConfig(
   '.int.spec.ts',
 );
 
+const wsTsUnitProject = getJestTsProjectConfig('ws-Unit', ['/node_modules', '.int.spec.ts'], 'ws', '.spec.ts');
+
+const wsTsIntegrationProject = getJestTsProjectConfig('ws-Integration', ['/node_modules'], 'ws', '.int.spec.ts');
+
 const tsUnitProject = getJestTsProjectConfig('Unit', ['/node_modules', '.int.spec.ts'], undefined, '.spec.ts');
 
 const tsIntegrationProject = getJestTsProjectConfig('Integration', ['/node_modules'], undefined, '.int.spec.ts');
@@ -41,5 +45,7 @@ module.exports = {
     testUtilsTsIntegrationProject,
     tsIntegrationProject,
     tsUnitProject,
+    wsTsIntegrationProject,
+    wsTsUnitProject,
   ],
 };
