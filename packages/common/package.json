@@ -1,0 +1,19 @@
+{
+  "author": "Cuak McCuackl <cuak.mccuakl@cuaklabs.com>",
+  "bugs": {
+    "url": "https://github.com/cuaklabs/duck-poker/issues"
+  },
+  "description": "> TODO: description",
+  "homepage": "https://github.com/cuaklabs/duck-poker/tree/main/packages/common#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@cuaklabs/duck-poker-backend-common",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cuaklabs/duck-poker.git"
+  },
+  "version": "0.0.1"
+}
