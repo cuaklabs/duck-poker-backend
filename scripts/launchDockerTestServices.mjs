@@ -1,4 +1,4 @@
-import { getTestEnvPath } from '@cuaklabs/duck-poker-backend-test-utils';
+import { getTestEnvPath } from '@cuaklabs/duck-poker-backend-testUtils';
 import { Command } from 'commander/esm.mjs';
 import shell from 'shelljs';
 
