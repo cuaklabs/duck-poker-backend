@@ -14,16 +14,16 @@ const redisJsIntegrationProject = getJestJsProjectConfig(
 );
 
 const testUtilsJsUnitProject = getJestJsProjectConfig(
-  'test-utils-Unit',
+  'testUtils-Unit',
   ['/node_modules', '.int.spec.js'],
-  'test-utils',
+  'testUtils',
   '.spec.js',
 );
 
 const testUtilsJsIntegrationProject = getJestJsProjectConfig(
-  'test-utils-Integration',
+  'testUtils-Integration',
   ['/node_modules'],
-  'test-utils',
+  'testUtils',
   '.int.spec.js',
 );
 

@@ -18,7 +18,7 @@
       "@cuaklabs/duck-poker-backend-env": ["./packages/env"],
       "@cuaklabs/duck-poker-backend-redis": ["./packages/redis"],
       "@cuaklabs/duck-poker-backend-server": ["./packages/server"],
-      "@cuaklabs/duck-poker-backend-test-utils": ["./packages/test-utils"]
+      "@cuaklabs/duck-poker-backend-testUtils": ["./packages/testUtils"]
     },
     "resolveJsonModule": true,
     "rootDir": "packages",

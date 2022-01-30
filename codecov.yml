@@ -8,9 +8,9 @@ coverage:
       redis:
         flags: 
           - redis
-      test-utils:
+      testUtils:
         flags:
-          - test-utils
+          - testUtils
       ws:
         flags:
           - ws
@@ -22,9 +22,9 @@ flags:
   redis:
     paths:
       - packages/redis/
-  test-utils:
+  testUtils:
     paths:
-      - packages/test-utils/
+      - packages/testUtils/
   ws:
     paths:
       - packages/ws/

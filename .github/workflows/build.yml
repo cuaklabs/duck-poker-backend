@@ -57,7 +57,7 @@ jobs:
         package:
           - env
           - redis
-          - test-utils
+          - testUtils
           - ws
     steps:
       - name: Git checkout
