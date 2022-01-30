@@ -59,6 +59,7 @@
   "scripts": {
     "build:dev": "tsc --build tsconfig.packages.dev.json",
     "build": "tsc --build tsconfig.packages.json",
+    "build:clean": "npm run build -- --clean",
     "commit": "commit",
     "docker:down:test": "node ./scripts/stopDockerTestServices.mjs",
     "docker:up:test": "node ./scripts/launchDockerTestServices.mjs",
