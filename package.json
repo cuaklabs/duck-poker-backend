@@ -4,7 +4,7 @@
     "url": "https://github.com/cuaklabs/duck-poker/issues"
   },
   "dependencies": {
-    "dotenv": "^14.3.2",
+    "dotenv": "^15.0.0",
     "ioredis": "^4.28.3",
     "ws": "^8.4.2"
   },
