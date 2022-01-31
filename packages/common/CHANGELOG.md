@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 
 ### Added
+- Added `EntityCreationAdapter` type.
+- Added `EntityFindAdapter` type.
 - Added `Converter` type.
 - Added `Either` type.
 - Added `EitherEither` type.
