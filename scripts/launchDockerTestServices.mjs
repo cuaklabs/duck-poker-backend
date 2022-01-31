@@ -1,11 +1,10 @@
-import { getTestEnvPath } from '@cuaklabs/duck-poker-backend-testUtils';
+import { getTestEnvPath } from '@cuaklabs/duck-poker-backend-test-utils';
 import { Command } from 'commander/esm.mjs';
 import shell from 'shelljs';
 
 const program = new Command();
 
-program
-  .option('-d, --dettach');
+program.option('-d, --dettach');
 
 program.parse(process.argv);
 
