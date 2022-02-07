@@ -16,6 +16,7 @@
     "paths": {
       "@cuaklabs/duck-poker-backend-common": ["./packages/common"],
       "@cuaklabs/duck-poker-backend-env": ["./packages/env"],
+      "@cuaklabs/duck-poker-backend-mongodb": ["./packages/mongodb"],
       "@cuaklabs/duck-poker-backend-redis": ["./packages/redis"],
       "@cuaklabs/duck-poker-backend-server": ["./packages/server"],
       "@cuaklabs/duck-poker-backend-test-utils": ["./packages/testUtils"]

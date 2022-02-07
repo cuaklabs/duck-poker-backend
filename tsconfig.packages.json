@@ -1,23 +1,26 @@
 {
   "files": [],
   "references": [
-  {
-    "path": "./packages/common/tsconfig.json"
-  },
-  {
-    "path": "./packages/env/tsconfig.json"
-  },
-  {
-    "path": "./packages/redis/tsconfig.json"
-  },
-  {
-    "path": "./packages/server/tsconfig.json"
-  },
-  {
-    "path": "./packages/testUtils/tsconfig.json"
-  },
-  {
-    "path": "./packages/ws/tsconfig.json"
-  }
- ]
+    {
+      "path": "./packages/common/tsconfig.json"
+    },
+    {
+      "path": "./packages/env/tsconfig.json"
+    },
+    {
+      "path": "./packages/mongodb/tsconfig.json"
+    },
+    {
+      "path": "./packages/redis/tsconfig.json"
+    },
+    {
+      "path": "./packages/server/tsconfig.json"
+    },
+    {
+      "path": "./packages/testUtils/tsconfig.json"
+    },
+    {
+      "path": "./packages/ws/tsconfig.json"
+    }
+  ]
 }

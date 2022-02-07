@@ -5,6 +5,9 @@ coverage:
       env:
         flags:
           - env
+      mongodb:
+        flags:
+          - mongodb
       redis:
         flags: 
           - redis
@@ -19,6 +22,9 @@ flags:
   env:
     paths:
       - packages/env/
+  mongodb:
+    paths:
+      - packages/mongodb/
   redis:
     paths:
       - packages/redis/
