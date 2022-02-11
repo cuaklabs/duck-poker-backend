@@ -2,6 +2,61 @@ const tsRoot = '<rootDir>/packages';
 const jsRoot = '<rootDir>/packages';
 
 /**
+ * Builds a unit test and an integration test jest projects for a given package
+ * @param {!string} package package name
+ * @param {!string} extension test files extension
+ * @returns {!Array<import("@jest/types/build/Config").GlobalConfig>}
+ */
+function buildPackageJsProjects(package) {
+  return buildPackageProjects(package, 'js');
+}
+
+/**
+ * Builds a unit test and an integration test jest projects for a given package
+ * @param {!string} package package name
+ * @param {!string} extension test files extension
+ * @returns {!Array<import("@jest/types/build/Config").GlobalConfig>}
+ */
+function buildPackageTsProjects(package) {
+  return buildPackageProjects(package, 'ts');
+}
+
+/**
+ * Builds a unit test and an integration test jest projects for a given package
+ * @param {!string} package package name
+ * @param {!string} extension test files extension
+ * @returns {!Array<import("@jest/types/build/Config").GlobalConfig>}
+ */
+function buildPackageProjects(package, extension) {
+  return [buildUnitPackageProject(package, extension), buildIntegrationPackageProject(package, extension)];
+}
+
+/**
+ * Builds a unit test jest projects for a given package
+ * @param {!string} package package name
+ * @param {!string} extension test files extension
+ * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
+ */
+function buildUnitPackageProject(package, extension) {
+  return getJestJsProjectConfig(
+    `${package}-Unit`,
+    ['/node_modules', `.int.spec.${extension}`],
+    package,
+    `.spec.${extension}`,
+  );
+}
+
+/**
+ * Builds an integration test jest projects for a given package
+ * @param {!string} package package name
+ * @param {!string} extension test files extension
+ * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
+ */
+function buildIntegrationPackageProject(package, extension) {
+  return getJestJsProjectConfig(`${package}-Integration`, ['/node_modules'], package, `.spec.${extension}`);
+}
+
+/**
  * @param { !string } projectName Jest project's name
  * @param { !Array<string> } collectCoverageFrom expressions to match to a file covered by IstambulJs
  * @param { !Array<string> } roots Jest roots
@@ -38,7 +93,7 @@ function getJestProjectConfig(projectName, collectCoverageFrom, roots, testMatch
  * @param { !Array<string> } testPathIgnorePatterns Expressions to match to ignored file paths by jest
  * @param { ?string } package Project package
  * @param { ?string } extension Test extension to match
- * @returns @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
+ * @returns { !import("@jest/types/build/Config").GlobalConfig } Jest config
  */
 function getJestJsProjectConfig(projectName, testPathIgnorePatterns, package, extension) {
   const testMatch = [getJsTestMatch(package, extension)];
@@ -147,10 +202,20 @@ function getJsTestMatch(submoduleName, testExtension) {
   return getSubmoduleTestMatch(jsRoot, submoduleName, testExtension);
 }
 
+/**
+ * @returns { !Array<string> }
+ */
+function getPackages() {
+  return ['env', 'mongodb', 'redis', 'testUtils', 'ws'];
+}
+
 module.exports = {
+  buildPackageJsProjects,
+  buildPackageTsProjects,
   getJestProjectConfig,
   getJestJsProjectConfig,
   getJsTestMatch,
   getTsTestMatch,
   getJestTsProjectConfig,
+  getPackages,
 };
