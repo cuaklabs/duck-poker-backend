@@ -6,6 +6,7 @@
   "dependencies": {
     "dotenv": "^14.3.2",
     "ioredis": "^4.28.3",
+    "mongodb": "^4.3.1",
     "ws": "^8.4.2"
   },
   "description": "Duck Poker backend",
@@ -81,6 +82,9 @@
     "test:package:env": "jest --config=config/jest/jest.config.js --selectProjects env-Integration env-Unit",
     "test:package:env:js": "jest --config=config/jest/jest.js.config.js --selectProjects env-Integration env-Unit",
     "test:package:env:js:ci:coverage": "npm run test:package:env:js -- --ci --coverage",
+    "test:package:mongodb": "jest --config=config/jest/jest.config.js --selectProjects mongodb-Integration mongodb-Unit",
+    "test:package:mongodb:js": "jest --config=config/jest/jest.js.config.js --selectProjects mongodb-Integration mongodb-Unit",
+    "test:package:mongodb:js:ci:coverage": "npm run test:package:mongodb:js -- --ci --coverage",
     "test:package:redis": "jest --config=config/jest/jest.config.js --selectProjects redis-Integration redis-Unit",
     "test:package:redis:js": "jest --config=config/jest/jest.js.config.js --selectProjects redis-Integration redis-Unit",
     "test:package:redis:js:ci:coverage": "npm run test:package:redis:js -- --ci --coverage",

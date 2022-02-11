@@ -1,11 +1,26 @@
 {
   "files": [],
   "references": [
-  {
-    "path": "./packages/env/tsconfig.dev.json"
-  },
-  {
-    "path": "./packages/redis/tsconfig.dev.json"
-  }
- ]
+    {
+      "path": "./packages/common/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/env/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/testUtils/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/mongodb/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/redis/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/server/tsconfig.dev.json"
+    },
+    {
+      "path": "./packages/ws/tsconfig.dev.json"
+    }
+  ]
 }

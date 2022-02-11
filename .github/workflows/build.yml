@@ -59,6 +59,7 @@ jobs:
       matrix:
         package:
           - env
+          - mongodb
           - redis
           - testUtils
           - ws
