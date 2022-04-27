@@ -12,7 +12,7 @@
   "main": "lib/index.js",
   "name": "@cuaklabs/duck-poker-backend-redis",
   "peerDependencies": {
-    "ioredis": "^4.0.0"
+    "ioredis": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

@@ -1,16 +1,16 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { IoredisPublisher } from './IoredisPublisher';
 
 describe(IoredisPublisher.name, () => {
-  let redisClientMock: jest.Mocked<IORedis.Redis>;
+  let redisClientMock: jest.Mocked<Redis>;
 
   let ioredisPublisher: IoredisPublisher;
 
   beforeAll(() => {
     redisClientMock = {
       publish: jest.fn(),
-    } as Partial<jest.Mocked<IORedis.Redis>> as jest.Mocked<IORedis.Redis>;
+    } as Partial<jest.Mocked<Redis>> as jest.Mocked<Redis>;
 
     ioredisPublisher = new IoredisPublisher(redisClientMock);
   });

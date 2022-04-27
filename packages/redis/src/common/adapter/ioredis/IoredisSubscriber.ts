@@ -1,11 +1,11 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { RedisSubscriber } from '../../domain/RedisSubscriber';
 
 export abstract class IoredisSubscriber<TContext = void> implements RedisSubscriber<TContext> {
   private readonly channelToContextMap: Map<string, TContext>;
 
-  constructor(private readonly redisClient: IORedis.Redis) {
+  constructor(private readonly redisClient: Redis) {
     this.channelToContextMap = new Map<string, TContext>();
 
     this.redisClient.on(

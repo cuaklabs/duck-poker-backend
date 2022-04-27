@@ -1,14 +1,14 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { IoredisPublisher } from './IoredisPublisher';
 
 describe(IoredisPublisher.name, () => {
-  let ioredisClient: IORedis.Redis;
+  let ioredisClient: Redis;
 
   let ioredisPublisher: IoredisPublisher;
 
   beforeAll(() => {
-    ioredisClient = new IORedis();
+    ioredisClient = new Redis();
 
     ioredisPublisher = new IoredisPublisher(ioredisClient);
   });
@@ -19,7 +19,7 @@ describe(IoredisPublisher.name, () => {
     let stringifiedMessageFixture: string;
 
     let ioredisSubscriberClientMessageHandler: jest.Mock<void, [string, string]>;
-    let ioredisSubscriberClient: IORedis.Redis;
+    let ioredisSubscriberClient: Redis;
 
     beforeAll(async () => {
       channel = 'ioredis-publisher-publish-integration-tests-sample-channel';
@@ -29,7 +29,7 @@ describe(IoredisPublisher.name, () => {
 
       ioredisSubscriberClientMessageHandler = jest.fn<void, [string, string]>();
 
-      ioredisSubscriberClient = new IORedis();
+      ioredisSubscriberClient = new Redis();
 
       ioredisSubscriberClient.on('message', ioredisSubscriberClientMessageHandler);
 

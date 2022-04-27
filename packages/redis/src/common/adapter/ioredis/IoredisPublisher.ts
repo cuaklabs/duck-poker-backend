@@ -1,11 +1,11 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { RedisPublisher } from '../../domain/RedisPublisher';
 
 export class IoredisPublisher implements RedisPublisher {
-  readonly #redisClient: IORedis.Redis;
+  readonly #redisClient: Redis;
 
-  constructor(redisClient: IORedis.Redis) {
+  constructor(redisClient: Redis) {
     this.#redisClient = redisClient;
   }
 

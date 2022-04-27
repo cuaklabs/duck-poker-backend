@@ -1,4 +1,4 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { IoredisSubscriber } from './IoredisSubscriber';
 
@@ -8,7 +8,7 @@ interface ContextFixture {
 
 class IoredisSubscriberMock extends IoredisSubscriber<ContextFixture> {
   constructor(
-    redisClient: IORedis.Redis,
+    redisClient: Redis,
     private readonly messageFromChannelHandler: jest.Mock<Promise<void>, [string, string, ContextFixture]>,
   ) {
     super(redisClient);
@@ -20,15 +20,15 @@ class IoredisSubscriberMock extends IoredisSubscriber<ContextFixture> {
 }
 
 describe(IoredisSubscriber.name, () => {
-  let ioredisClient: IORedis.Redis;
-  let ioredisSubscriberClient: IORedis.Redis;
+  let ioredisClient: Redis;
+  let ioredisSubscriberClient: Redis;
   let messageFromChannelHandler: jest.Mock<Promise<void>, [string, string, ContextFixture]>;
 
   let ioredisSubscriber: IoredisSubscriberMock;
 
   beforeAll(() => {
-    ioredisClient = new IORedis();
-    ioredisSubscriberClient = new IORedis();
+    ioredisClient = new Redis();
+    ioredisSubscriberClient = new Redis();
 
     messageFromChannelHandler = jest.fn<Promise<void>, [string, string, ContextFixture]>();
 

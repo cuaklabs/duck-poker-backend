@@ -1,4 +1,4 @@
-import IORedis from 'ioredis';
+import Redis from 'ioredis';
 
 import { IoredisSubscriber } from './IoredisSubscriber';
 
@@ -8,7 +8,7 @@ interface ContextFixture {
 
 class IoredisSubscriberMock extends IoredisSubscriber<ContextFixture> {
   constructor(
-    redisClient: IORedis.Redis,
+    redisClient: Redis,
     private readonly messageFromChannelHandler: jest.Mock<Promise<void>, [string, string, ContextFixture]>,
   ) {
     super(redisClient);
@@ -20,7 +20,7 @@ class IoredisSubscriberMock extends IoredisSubscriber<ContextFixture> {
 }
 
 describe(IoredisSubscriber.name, () => {
-  let redisClientMock: jest.Mocked<IORedis.Redis>;
+  let redisClientMock: jest.Mocked<Redis>;
 
   let messageFromChannelHandler: jest.Mock<Promise<void>, [string, string, ContextFixture]>;
 
@@ -31,7 +31,7 @@ describe(IoredisSubscriber.name, () => {
       on: jest.fn(),
       subscribe: jest.fn(),
       unsubscribe: jest.fn(),
-    } as Partial<jest.Mocked<IORedis.Redis>> as jest.Mocked<IORedis.Redis>;
+    } as Partial<jest.Mocked<Redis>> as jest.Mocked<Redis>;
 
     messageFromChannelHandler = jest.fn<Promise<void>, [string, string, ContextFixture]>();
 
@@ -67,7 +67,7 @@ describe(IoredisSubscriber.name, () => {
         redisClientMock.subscribe.mockClear();
       });
 
-      it('must call ioredis.subscribe', () => {
+      it('must call subscribe', () => {
         expect(redisClientMock.subscribe).toHaveBeenCalledTimes(1);
         expect(redisClientMock.subscribe).toHaveBeenCalledWith(channel);
       });
@@ -90,7 +90,7 @@ describe(IoredisSubscriber.name, () => {
         redisClientMock.subscribe.mockClear();
       });
 
-      it('must call ioredis.unsubscribe', () => {
+      it('must call unsubscribe', () => {
         expect(redisClientMock.unsubscribe).toHaveBeenCalledTimes(1);
         expect(redisClientMock.unsubscribe).toHaveBeenCalledWith(channel);
       });
