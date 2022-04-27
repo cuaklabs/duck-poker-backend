@@ -60,7 +60,7 @@
   "scripts": {
     "build:dev": "tsc --build tsconfig.packages.dev.json",
     "build": "tsc --build tsconfig.packages.json",
-    "build:clean": "npm run build -- --clean",
+    "build:clean": "node ./scripts/removeTypescriptCompiledFiles.mjs",
     "commit": "commit",
     "docker:down:test": "node ./scripts/stopDockerTestServices.mjs",
     "docker:up:test": "node ./scripts/launchDockerTestServices.mjs",
@@ -68,6 +68,7 @@
     "format": "prettier --write ./packages",
     "lint": "eslint --ext ts --ignore-path .gitignore .",
     "packages:link": "node ./scripts/cretateSymlinks.mjs",
+    "prebuild": "pnpm run build:clean",
     "prepare": "husky install",
     "prepublish:packages": "npm run build && npm t",
     "publish:packages": "lerna publish from-package",
